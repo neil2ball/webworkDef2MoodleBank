@@ -1,0 +1,25 @@
+USAGE: ./def2bank.sh inputFileName.def moodleCourseName homeworkSetName moodleEngineName serverUrl webworkCourseName > outputFileName.xml
+
+WeBWorK definition files can be exported to a .def format. This BASH script takes these files and translates them for use by the WeBWorK Opaque Server in such a manner that they can be uploaded to a Moodle question bank.
+
+The original application that performs this approximate function is found here: https://github.com/mgage/setdef2moodlequiz
+
+This script borrows from, adds to, takes away from, and roughly translates mgage's work.
+
+More information on why this is used can be found here:
+https://michaelgage.blogspot.com/2017/05/p.html
+
+Step 1: Create a homework set in a WeBWorK course using the Homework Sets Editor.
+Step 2: Add problems to the homework set using the Library Browser.
+Step 3: Export the homework set using the Homework Sets Editor.
+Step 4: Download the homework set .def file using the File Manager.
+Step 5: Run def2bank.sh on the .def file and pipe the output to a new .xml file.
+Step 6: Import the .xml file to a Moodle question bank.
+
+Other URLs that will help:
+https://github.com/openwebwork/opaque_server
+https://github.com/moodleou/moodle-qtype_opaque
+https://github.com/moodleou/moodle-qbehaviour_opaque
+https://webwork.maa.org/moodle/mod/forum/discuss.php?d=4554#p13333
+https://github.com/maths/moodle-qtype_stack/blob/master/doc/en/Installation/Mathjax.md
+https://webwork.maa.org/wiki/Installation_Manual_for_2.16_on_Ubuntu
